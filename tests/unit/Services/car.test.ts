@@ -17,7 +17,7 @@ describe('Teste de CarService', function () {
 
     const carOutput = {
       status: 201,
-      message: {
+      message: { Car: {
         id: '6348513f34c397abcad040b2',
         model: 'Marea',
         year: 2002,
@@ -26,7 +26,7 @@ describe('Teste de CarService', function () {
         buyValue: 15.990,
         doorsQty: 4,
         seatsQty: 5,
-      },
+      } },
     };
 
     sinon.stub(Model, 'create').resolves(carOutput);

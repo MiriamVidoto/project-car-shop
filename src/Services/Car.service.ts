@@ -1,6 +1,6 @@
 import Car from '../Domains/Car';
 import CarODM from '../Models/Car.ODM';
-import { ICar } from '../Interfaces/ICar';
+import ICar from '../Interfaces/ICar';
 
 export default class CarService {
   carODM = new CarODM();
@@ -31,7 +31,7 @@ export default class CarService {
       const result = new Car(car);
       return { status: 200, message: result };
     }
-    return { status: 404, message: { message: 'Car not found' } };
+    return { status: 404, message: 'Car not found' };
   };
 
   update = async (id: string, carData: ICar) => {

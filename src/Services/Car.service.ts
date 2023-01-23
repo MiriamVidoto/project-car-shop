@@ -39,7 +39,7 @@ export default class CarService {
       return {
         status: 422, message: { message: 'Invalid mongo id' } };
     }
-    const carChanged = await this.carODM.update(id, carData);
+    const carChanged = await this.carODM.update(id, carData);    
     if (carChanged != null) {
       const result = new Car(carChanged);
       return { status: 200, message: result };

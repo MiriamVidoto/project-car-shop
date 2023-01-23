@@ -100,7 +100,7 @@ describe('Teste de CarService', function () {
 
     const response = {
       status: 422,
-      message: 'Invalid mongo id',
+      message: { message: 'Invalid mongo id' },
     };
 
     expect(result).to.be.deep.equal(response);
@@ -115,7 +115,7 @@ describe('Teste de CarService', function () {
 
     const response = {
       status: 404,
-      message: 'Car not found',
+      message: { message: 'Car not found' },
     };
 
     expect(result).to.be.deep.equal(response);

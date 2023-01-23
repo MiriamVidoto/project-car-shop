@@ -24,19 +24,20 @@ export default class CarService {
 
   findById = async (id: string) => {
     if (!this.validateId(id)) {
-      return { status: 422, message: 'Invalid mongo id' };
+      return { status: 422, message: { message: 'Invalid mongo id' } };
     }
     const car = await this.carODM.findById(id);
     if (car != null) {
       const result = new Car(car);
       return { status: 200, message: result };
     }
-    return { status: 404, message: 'Car not found' };
+    return { status: 404, message: { message: 'Car not found' } };
   };
 
   update = async (id: string, carData: ICar) => {
     if (!this.validateId(id)) {
-      return { status: 422, message: 'Invalid mongo id' };
+      return {
+        status: 422, message: { message: 'Invalid mongo id' } };
     }
     const carChanged = await this.carODM.update(id, carData);
     if (carChanged != null) {

@@ -24,25 +24,25 @@ export default class MotorcycleService {
 
   findById = async (id: string) => {
     if (!this.validateId(id)) {
-      return { status: 422, message: 'Invalid mongo id' };
+      return { status: 422, message: { message: 'Invalid mongo id' } };
     }
     const motorcycle = await this.motorcycleODM.findById(id);
     if (motorcycle != null) {
       const result = new Motorcycle(motorcycle);
       return { status: 200, message: result };
     }
-    return { status: 404, message: 'Motorcycle not found' };
+    return { status: 404, message: { message: 'Motorcycle not found' } };
   };
 
   update = async (id: string, motorcycleData: IMotorcycle) => {
     if (!this.validateId(id)) {
-      return { status: 422, message: 'Invalid mongo id' };
+      return { status: 422, message: { message: 'Invalid mongo id' } };
     }
     const motorcycleChanged = await this.motorcycleODM.update(id, motorcycleData);
     if (motorcycleChanged != null) {
       const result = new Motorcycle(motorcycleChanged);
       return { status: 200, message: result };
     }
-    return { status: 404, message: { message: 'Car not found' } };
+    return { status: 404, message: { message: 'Motorcycle not found' } };
   };
 }

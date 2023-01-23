@@ -4,7 +4,7 @@ import motorcycleRoute from './motorcycle.route';
 
 const routes = Router();
 
-routes.use('/car', carRoute);
-routes.use('/motorcycle', motorcycleRoute);
+routes.use('/cars', carRoute);
+routes.use('/motorcycles', motorcycleRoute);
 
 export default routes;

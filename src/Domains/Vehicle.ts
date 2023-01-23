@@ -13,7 +13,7 @@ class Vehicle {
     this.model = params.model;
     this.year = params.year;
     this.color = params.color;
-    this.status = params.status;
+    this.status = params.status || false;
     this.buyValue = params.buyValue;
   }
 }

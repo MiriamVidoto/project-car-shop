@@ -7,6 +7,6 @@ const motorcycleController = new MotorcycleController();
 motorcycleRoute.post('/', motorcycleController.createMotorcycle);
 motorcycleRoute.get('/', motorcycleController.findAllMotorcycles);
 motorcycleRoute.get('/:id', motorcycleController.findMotorcycleById);
-motorcycleRoute.post('/:id', motorcycleController.updateMotorcycle);
+motorcycleRoute.put('/:id', motorcycleController.updateMotorcycle);
 
 export default motorcycleRoute;
